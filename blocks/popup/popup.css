@@ -1,0 +1,21 @@
+.popup {
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    /* opacity: .5; */
+    /* position: fixed; */
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+}
+
+.popup::before {
+    display: block;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: .5;
+}
