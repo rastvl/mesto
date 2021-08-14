@@ -1,4 +1,4 @@
-!function () {
+!function() {
     let formElement = document.querySelector('.popup__form');
     let nameInput = formElement.querySelectorAll('.popup__input')[0];
     let jobInput = formElement.querySelectorAll('.popup__input')[1];
