@@ -2,7 +2,7 @@
     let formElement = document.querySelector('.popup__form');
     let nameInput = formElement.querySelectorAll('.popup__input')[0];
     let jobInput = formElement.querySelectorAll('.popup__input')[1];
-
+    let popup = document.querySelector('.popup'); 
     // Обработчик «отправки» формы, хотя пока
     // она никуда отправляться не будет
     function formSubmitHandler(evt) {
@@ -15,13 +15,13 @@
 
         profileName.textContent = name;
         profileDesc.textContent = job;
+        popup.style.display = "none";
     }
 
     formElement.addEventListener('submit', formSubmitHandler);
 
     let editBtn = document.querySelector('.profile__edit-button');
     editBtn.addEventListener('click', _ => {
-        let popup = document.querySelector('.popup'); 
         popup.style.display = "block";
         // popup.className = "popup popup_opened";
     })
