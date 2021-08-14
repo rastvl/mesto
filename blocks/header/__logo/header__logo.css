@@ -4,11 +4,12 @@
     background-image: url("../../../images/logo.svg");
     margin: 0 0 41px;
     background-size: cover;
-    
 }
 
 @media screen and (max-width: 920px) {
     .header__logo {
         margin: 28px 0 31.6px 27px;
+        width: 103.74px;
+        height: 24.4px;
     }
 }

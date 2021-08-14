@@ -11,17 +11,18 @@
     background-repeat: no-repeat;
     background-position: 50%;
     opacity: 1;
+    transition: opacity .3s linear;
+    cursor: pointer;
 }
 
 .profile__add-button:hover {
     opacity: .6;
-    transition: opacity .3s linear;
-    cursor: pointer;
 }
 
 @media screen and (max-width: 700px) {
     .profile__add-button {
         width: 100%;
         margin: 36px 0 0;
+        background-image: url("../../../images/add-button-mob.svg");
     }
 }

@@ -11,12 +11,12 @@
     background-image: url("../../../images/edit-button.svg");
     background-repeat: no-repeat;
     background-position: 50%;
+    transition: opacity .3s linear;
+    cursor: pointer;
 }
 
 .profile__edit-button:hover {
-    cursor: pointer;
     opacity: .6;
-    transition: opacity .3s linear;
 }
 
 @media screen and (max-width: 700px) {

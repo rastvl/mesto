@@ -2,8 +2,8 @@
     margin: 0;
     color: white;
     font-weight: 400;
-    font-size: 18px;
-    line-height: 21.78px;
+    font-size: 24px;
+    line-height: 29px;
     font-style: normal;
     grid-column: 1/2;
     grid-row: 2/3;
@@ -11,8 +11,8 @@
 
 @media screen and (max-width: 700px) {
     .profile__description {
-        font-size: 14px;
-        line-height: 17px;
+        font-size: 18px;
+        line-height: 22px;
         grid-column: 1/3;
     }
 }

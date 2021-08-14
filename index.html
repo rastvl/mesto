@@ -1,87 +1,92 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mesto</title>
+    <title>Mesto | Жак-Ив Кусто</title>
     <link rel="stylesheet" href="./pages/index.css">
 </head>
+
 <body class="page">
     <div class="page__content">
         <header class="header">
             <div class="header__logo"></div>
         </header>
-
-        <section class="profile">
-            <img src="images/profile-avatar.jpg" class="profile__avatar" alt="Аватар профиля">
-            <div class="profile__info">
-                <p class="profile__name">Жак-Ив Кусто</p>
-                <p class="profile__description">Исследователь океана</p>
-                <button type="button" class="profile__edit-button"></button>
-            </div>
-            <button type="button" class="profile__add-button"></button>
-        </section>
-        <section class="elements">
-            <div class="card">
-                <img class="card__image" src="./images/karachaevsk.jpg" src="Фотография места">
-                <div class="card__description">
-                    <p class="card__title">Карачаевск</p>
-                    <button type="button" class="card__like-button"></button>
+        <main>
+            <section class="profile">
+                <img src="images/profile-avatar.jpg" class="profile__avatar" alt="Аватар профиля">
+                <div class="profile__info">
+                    <h1 class="profile__name">Жак-Ив Кусто</h1>
+                    <p class="profile__description">Исследователь океана</p>
+                    <button type="button" class="profile__edit-button"></button>
                 </div>
-            </div>
-            <div class="card">
-                <img class="card__image" src="./images/karachaevsk.jpg" src="Фотография места">
-                <div class="card__description">
-                    <p class="card__title">Гора Эльбрус</p>
-                    <button type="button" class="card__like-button"></button>
+                <button type="button" class="profile__add-button"></button>
+            </section>
+            <section class="elements">
+                <div class="card">
+                    <img class="card__image" src="./images/karachaevsk.jpg" alt="Фотография места">
+                    <div class="card__description">
+                        <p class="card__title">Карачаевск</p>
+                        <button type="button" class="card__like-button"></button>
+                    </div>
                 </div>
-            </div>
-            <div class="card">
-                <img class="card__image" src="./images/karachaevsk.jpg" src="Фотография места">
-                <div class="card__description">
-                    <p class="card__title">Домбай</p>
-                    <button type="button" class="card__like-button"></button>
+                <div class="card">
+                    <img class="card__image" src="./images/karachaevsk.jpg" alt="Фотография места">
+                    <div class="card__description">
+                        <p class="card__title">Гора Эльбрус</p>
+                        <button type="button" class="card__like-button"></button>
+                    </div>
                 </div>
-            </div>
-            <div class="card">
-                <img class="card__image" src="./images/karachaevsk.jpg" src="Фотография места">
-                <div class="card__description">
-                    <p class="card__title">Гора Эльбрус</p>
-                    <button type="button" class="card__like-button"></button>
+                <div class="card">
+                    <img class="card__image" src="./images/karachaevsk.jpg" alt="Фотография места">
+                    <div class="card__description">
+                        <p class="card__title">Домбай</p>
+                        <button type="button" class="card__like-button"></button>
+                    </div>
                 </div>
-            </div>
-            <div class="card">
-                <img class="card__image" src="./images/karachaevsk.jpg" src="Фотография места">
-                <div class="card__description">
-                    <p class="card__title">Домбай</p>
-                    <button type="button" class="card__like-button"></button>
+                <div class="card">
+                    <img class="card__image" src="./images/karachaevsk.jpg" alt="Фотография места">
+                    <div class="card__description">
+                        <p class="card__title">Гора Эльбрус</p>
+                        <button type="button" class="card__like-button"></button>
+                    </div>
                 </div>
-            </div>
-            <div class="card">
-                <img class="card__image" src="./images/karachaevsk.jpg" src="Фотография места">
-                <div class="card__description">
-                    <p class="card__title">Карачаево-Черкесия</p>
-                    <button type="button" class="card__like-button"></button>
+                <div class="card">
+                    <img class="card__image" src="./images/karachaevsk.jpg" alt="Фотография места">
+                    <div class="card__description">
+                        <p class="card__title">Домбай</p>
+                        <button type="button" class="card__like-button"></button>
+                    </div>
                 </div>
-            </div>
-        </section>
-        <div class="popup">
-            <form class="popup__form">
-                <button type="button" class="popup__close"></button>
+                <div class="card">
+                    <img class="card__image" src="./images/karachaevsk.jpg" alt="Фотография места">
+                    <div class="card__description">
+                        <p class="card__title">Карачаево-Черкесия</p>
+                        <button type="button" class="card__like-button"></button>
+                    </div>
+                </div>
+            </section>
+            <div class="popup">
                 <div class="popup__form-content">
-                    <p class="popup__description">Редактировать профиль</p>
-                    <input type="text" value="Жак-Ив Кусто" class="popup__input">
-                    <input type="text" value="Исследователь океана" class="popup__input">
-                    <button type="submit" class="pupup__submit">Сохранить</button>
+                    <button type="button" class="popup__close"></button>
+                    <form class="popup__form" name="edit-profile">
+                        <h2 class="popup__description">Редактировать профиль</h2>
+                        <input type="text" value="" class="popup__input" name="login">
+                        <input type="text" value="" class="popup__input" name="job">
+                        <button type="submit" class="pupup__submit">Сохранить</button>
+                    </form>
                 </div>
-            </form>
-            
-        </div>
+        </main>
+
         <footer class="footer">
             <p class="footer__copyright">&copy; 2021 Mesto Russia</p>
         </footer>
+
     </div>
+
     <script src="scripts/script.js"></script>
 </body>
+
 </html>
