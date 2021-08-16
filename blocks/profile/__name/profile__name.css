@@ -8,11 +8,16 @@
     margin: 0;
     grid-column: 1/1;
     grid-row: 1/2;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 400px;
 }
 
 @media screen and (max-width: 700px) {
     .profile__name {
         font-size: 27px;
         line-height: 32.68px;
+        max-width: 400px;
     }
 }

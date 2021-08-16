@@ -22,7 +22,7 @@
 @media screen and (max-width: 700px) {
     .profile__add-button {
         width: 100%;
-        margin: 36px 0 0;
-        background-image: url("../../../images/add-button-mob.svg");
+        margin: 31px 0 0;
+        background-size: 16px;
     }
 }

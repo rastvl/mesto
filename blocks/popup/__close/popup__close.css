@@ -17,6 +17,6 @@
     .popup__close {
         right: 0;
         top: -48px;
-        background-image: url("../../../images/close-icon-mob.svg");
+        background-size: 20px;
     }
 }
