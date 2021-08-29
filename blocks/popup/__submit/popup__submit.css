@@ -1,4 +1,4 @@
-.pupup__submit {
+.popup__submit {
     display: block;
     height: 50px;
     font-style: normal;
@@ -15,7 +15,7 @@
     cursor: pointer;
 }
 
-.pupup__submit:hover {
+.popup__submit:hover {
     opacity: .8;
     -webkit-transition: opacity .2s ease-in-out;
     -o-transition: opacity .2s ease-in-out;
@@ -23,7 +23,7 @@
 }
 
 @media screen and (max-width: 500px) {
-    .pupup__submit {
+    .popup__submit {
         margin: 15px 0 25px;
         height: 46px;
         font-size: 14px;
