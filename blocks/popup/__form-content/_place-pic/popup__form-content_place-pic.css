@@ -1,0 +1,9 @@
+.popup__form-content_place-pic {
+    max-width: 75vw;
+    max-height: 75vh;
+    margin: 90px auto 0;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    border-radius: 0;
+    background: transparent;
+}

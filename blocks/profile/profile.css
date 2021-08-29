@@ -1,8 +1,11 @@
 .profile {
     margin: 40px auto 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    /* width: 880px; */
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 @media screen and (max-width: 920px) {
@@ -13,7 +16,10 @@
 
 @media screen and (max-width: 700px) {
     .profile {
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
         text-align: center;
     }
 }

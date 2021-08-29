@@ -5,9 +5,14 @@
     font-size: 18px;
     line-height: 22px;
     font-style: normal;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
     grid-column: 1/2;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
     grid-row: 2/3;
-    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+       text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
     max-width: 400px;
@@ -16,6 +21,8 @@
 @media screen and (max-width: 700px) {
     .profile__description {
         line-height: 22px;
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 1;
         grid-column: 1/2;
         max-width: 250px;
         font-size: 14px;

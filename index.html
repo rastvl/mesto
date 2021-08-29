@@ -24,8 +24,19 @@
                 </div>
                 <button type="button" class="profile__add-button"></button>
             </section>
+
             <section class="elements">
-                <div class="card">
+                <template id="cardTemplate">
+                    <div class="card">
+                        <img class="card__trash-icon" src="images/trash.svg" alt="Корзина">
+                        <div class="card__image"></div>
+                        <div class="card__description">
+                            <p class="card__title"></p>
+                            <button type="button" class="card__like-button"></button>
+                        </div>
+                    </div>
+                </template>
+                <!-- <div class="card">
                     <img class="card__image" src="./images/karachaevsk.jpg" alt="Фотография места">
                     <div class="card__description">
                         <p class="card__title">Карачаевск</p>
@@ -66,17 +77,37 @@
                         <p class="card__title">Карачаево-Черкесия</p>
                         <button type="button" class="card__like-button"></button>
                     </div>
-                </div>
+                </div> -->
             </section>
-            <div class="popup">
+            <div class="popup popup-edit">
                 <div class="popup__form-content">
-                    <button type="button" class="popup__close"></button>
+                    <button type="button" class="popup__close popup__close_edit"></button>
                     <h2 class="popup__description">Редактировать профиль</h2>
-                    <form class="popup__form" name="edit-profile">
+                    <form class="popup__form popup__form_edit" name="edit-profile">
                         <input type="text" value="" class="popup__input" name="login" placeholder="Имя">
                         <input type="text" value="" class="popup__input" name="job" placeholder="Деятельность">
                         <button type="submit" class="pupup__submit">Сохранить</button>
                     </form>
+                </div>
+            </div>
+            <div class="popup popup_add-card">
+                <div class="popup__form-content">
+                    <button type="button" class="popup__close popup__close_add-card"></button>
+                    <h2 class="popup__description">Новое место</h2>
+                    <form class="popup__form popup__form_add-card" name="edit-profile">
+                        <input type="text" value="" class="popup__input" name="title" placeholder="Название">
+                        <input type="text" value="" class="popup__input" name="link" placeholder="Ссылка на картинку">
+                        <button type="submit" class="pupup__submit">Создать</button>
+                    </form>
+                </div>
+            </div>
+            <div class="popup popup_place-pic">
+                <div class="popup__form-content popup__form-content_place-pic">
+                    <figure class="place-pic">
+                        <button type="button" class="popup__close popup__close_place-pic"></button>
+                        <img class="place-pic__show" alt="фото места">
+                        <figcaption class="place-pic__caption"></figcaption>
+                    </figure>
                 </div>
             </div>
         </main>

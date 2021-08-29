@@ -2,15 +2,21 @@
     margin: 15px 0 0;
     width: 24px;
     height: 24px;
+    -ms-grid-row: 1;
     grid-row: 1/1;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
     grid-column: 2/3;
     border: 1px solid #fff;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     background-color: #000;
     opacity: 1;
     background-image: url("../../../images/edit-button.svg");
     background-repeat: no-repeat;
     background-position: 50%;
+    -webkit-transition: opacity .3s linear;
+    -o-transition: opacity .3s linear;
     transition: opacity .3s linear;
     cursor: pointer;
 }

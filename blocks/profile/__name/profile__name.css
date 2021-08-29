@@ -5,9 +5,13 @@
     line-height: 48px;
     font-style: normal;
     margin: 0;
+    -ms-grid-column: 1;
     grid-column: 1/1;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
     grid-row: 1/2;
-    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+       text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
     max-width: 400px;
