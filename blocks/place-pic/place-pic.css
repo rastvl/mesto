@@ -1,6 +1,5 @@
 .place-pic {
     max-width: 75vw;
     max-height: 75vh;
-    margin: 90px auto 0;
-    position: relative;
+    margin: 0;
 }
