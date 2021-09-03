@@ -100,7 +100,7 @@ function openPopup(popup) {
 function openEditProfilePopup(){
     nameInput.value = profileName.textContent;
     jobInput.value = profileDesc.textContent;
-    openPopup(popup);
+    openPopup(popupEdit);
 }
 
 function submitProfileEdit(evt) {
