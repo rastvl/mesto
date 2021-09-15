@@ -50,6 +50,7 @@ const popupImgCaption = document.querySelector('.place-pic__caption');
 const profileName = document.querySelector('.profile__name');
 const profileDesc = document.querySelector('.profile__description');
 
+
 function createCard(cardInfo) {
     const cardElement = cardTemplate.querySelector('.card').cloneNode(true);
     const cardImg = cardElement.querySelector(".card__image");
@@ -91,15 +92,38 @@ function downloadCards(cardsArr) {
 
 function closePopup(popup) {
     popup.classList.remove('popup_opened');
+    removeEscHandler()
 }
 
 function openPopup(popup) {
+    setEscHandler();
     popup.classList.add('popup_opened');
+}
+
+const closePopupEsc = evt => {
+    if (evt.key === 'Escape') {
+        const popups = document.querySelectorAll('.popup');
+        popups.forEach(popup => {
+            const classList = Array.from(popup.classList);
+            if (classList.find(classItem => classItem === 'popup_opened')){
+                closePopup(popup);
+            }
+        })
+    }
+}
+
+function setEscHandler() {
+    document.addEventListener('keydown', closePopupEsc)
+}
+
+function removeEscHandler() {
+    document.removeEventListener('keydown', closePopupEsc)
 }
 
 function openEditProfilePopup(){
     nameInput.value = profileName.textContent;
     jobInput.value = profileDesc.textContent;
+    setEscHandler();
     openPopup(popupEdit);
 }
 
@@ -121,6 +145,19 @@ function submitCardRender(evt) {
     formAddCard.reset();
 }
 
+const isOverlay = evt => {
+    if (evt.type === 'mousedown')
+        return Array.from(evt.target.classList)
+                    .find(element => element == 'popup_opened');
+}
+
+function closePopupOverlay() {
+    document.addEventListener('mousedown', evt => {
+        if (isOverlay(evt))
+            closePopup(evt.target);
+    })
+}
+
 formEdit.addEventListener('submit', submitProfileEdit);
 formAddCard.addEventListener('submit', submitCardRender);
 
@@ -139,6 +176,7 @@ closeAddCardBtn.addEventListener('click', _ => {
 closePlacePicBtn.addEventListener('click', _ => {
     closePopup(popupPic);
 })
+closePopupOverlay();
 
 
 downloadCards(initialCards);
