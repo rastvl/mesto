@@ -1,20 +1,12 @@
-function enableValidation(selectorKeys) {
-    const {
-        formSelector,
-        inputSelector,
-        submitButtonSelector,
-        inactiveButtonClass,
-        inputErrorClass,
-        errorClass
-    } = selectorKeys;
+function enableValidation({formSelector, inputSelector, submitButtonSelector, inactiveButtonClass, inputErrorClass, errorClass}) {
 
     //formSelector to global scope to use in 'closePopup' and 'openPopup' methods
     window.formSelector = formSelector;
 
-    const formsList = Array.from(document.querySelectorAll(`.${formSelector}`));
+    const formsList = Array.from(document.querySelectorAll(formSelector));
 
     formsList.forEach(form => {
-        const btn = form.querySelector(`.${submitButtonSelector}`);
+        const btn = form.querySelector(submitButtonSelector);
         form.addEventListener('submit', evt => {
             evt.preventDefault();
             btn.classList.add(inactiveButtonClass);
@@ -69,7 +61,7 @@ function toggleButtonState(inputsList, btn, inactiveBtnClass) {
 
 function setEventListeners(form, inputSelector, btn, inactiveButtonClass, inputErrorClass, errorClass) {
     //Get all input fields
-    const inputsList = Array.from(form.querySelectorAll(`.${inputSelector}`));
+    const inputsList = Array.from(form.querySelectorAll(inputSelector));
 
     inputsList.forEach(input => {
         input.addEventListener('input', _ => {
@@ -80,7 +72,7 @@ function setEventListeners(form, inputSelector, btn, inactiveButtonClass, inputE
 }
 
 function refreshForm(form, inputSelector, btn, inactiveButtonClass, inputErrorClass, errorClass) {
-    const inputsList = Array.from(form.querySelectorAll(`.${inputSelector}`));
+    const inputsList = Array.from(form.querySelectorAll(inputSelector));
     toggleButtonState(inputsList, btn, inactiveButtonClass);
     inputsList.forEach(input => {
         hideInputError(form, input, inputErrorClass, errorClass)
@@ -88,9 +80,9 @@ function refreshForm(form, inputSelector, btn, inactiveButtonClass, inputErrorCl
 }
 
 enableValidation({
-    formSelector: "popup__form",
-    inputSelector: "popup__input",
-    submitButtonSelector: "popup__submit",
+    formSelector: ".popup__form",
+    inputSelector: ".popup__input",
+    submitButtonSelector: ".popup__submit",
     inactiveButtonClass: "popup__submit_type_error",
     inputErrorClass: "popup__input_type_error",
     errorClass: "popup__input-error_active"

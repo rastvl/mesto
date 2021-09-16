@@ -126,7 +126,7 @@ function openPopup(popup) {
     setEscHandler();
     setMouseHandler(popup);
     popup.classList.add('popup_opened');
-    const form = popup.querySelector(`.${window.formSelector}`);
+    const form = popup.querySelector(window.formSelector);
     if (form)
         form.refresh();
 }
@@ -137,7 +137,7 @@ function closePopup(popup) {
     removeMouseHandler(popup);
 
     //reset errors
-    const form = popup.querySelector(`.${window.formSelector}`);
+    const form = popup.querySelector(window.formSelector);
     if (form) {
         form.reset();
         form.refresh();
