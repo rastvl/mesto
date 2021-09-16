@@ -7,13 +7,23 @@ function enableValidation(selectorKeys) {
         inputErrorClass,
         errorClass
     } = selectorKeys;
+
+    //formSelector to global scope to use in 'closePopup' and 'openPopup' methods
+    window.formSelector = formSelector;
+
     const formsList = Array.from(document.querySelectorAll(`.${formSelector}`));
 
     formsList.forEach(form => {
+        const btn = form.querySelector(`.${submitButtonSelector}`);
         form.addEventListener('submit', evt => {
             evt.preventDefault();
+            btn.classList.add(inactiveButtonClass);
+            btn.disabled = true;
         })
-        setEventListeners(form, inputSelector, submitButtonSelector, inactiveButtonClass, inputErrorClass, errorClass);
+        setEventListeners(form, inputSelector, btn, inactiveButtonClass, inputErrorClass, errorClass);
+        form.refresh = function() {
+            refreshForm(form, inputSelector, btn, inactiveButtonClass, inputErrorClass, errorClass);
+        }
     })
 
 
@@ -43,7 +53,7 @@ function isValid(formElement, inputElement, inputErrorClass, errorClass) {
 
 function hasInvalidInput(inputsList) {
     return inputsList.some(input => {
-        return !input.validity.valid;
+        return !input.validity.valid || input.value == '';
     })
 }
 
@@ -57,18 +67,23 @@ function toggleButtonState(inputsList, btn, inactiveBtnClass) {
     }
 }
 
-function setEventListeners(form, inputSelector, btnSelector, inactiveButtonClass, inputErrorClass, errorClass) {
+function setEventListeners(form, inputSelector, btn, inactiveButtonClass, inputErrorClass, errorClass) {
     //Get all input fields
     const inputsList = Array.from(form.querySelectorAll(`.${inputSelector}`));
-    //Get submit button
-    const btn = form.querySelector(`.${btnSelector}`);
-
 
     inputsList.forEach(input => {
         input.addEventListener('input', _ => {
             isValid(form, input, inputErrorClass, errorClass);
             toggleButtonState(inputsList, btn, inactiveButtonClass);
         })
+    })
+}
+
+function refreshForm(form, inputSelector, btn, inactiveButtonClass, inputErrorClass, errorClass) {
+    const inputsList = Array.from(form.querySelectorAll(`.${inputSelector}`));
+    toggleButtonState(inputsList, btn, inactiveButtonClass);
+    inputsList.forEach(input => {
+        hideInputError(form, input, inputErrorClass, errorClass)
     })
 }
 
