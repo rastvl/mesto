@@ -135,6 +135,8 @@ function closePopup(popup) {
     popup.classList.remove('popup_opened');
     removeEscHandler();
     removeMouseHandler(popup);
+
+    //reset errors
     const form = popup.querySelector(`.${window.formSelector}`);
     if (form) {
         form.reset();
