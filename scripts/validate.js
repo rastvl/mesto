@@ -1,7 +1,7 @@
 function enableValidation({formSelector, inputSelector, submitButtonSelector, inactiveButtonClass, inputErrorClass, errorClass}) {
 
     //formSelector to global scope to use in 'closePopup' and 'openPopup' methods
-    window.formSelector = formSelector;
+    //window.formSelector = formSelector;
 
     const formsList = Array.from(document.querySelectorAll(formSelector));
 
@@ -17,8 +17,6 @@ function enableValidation({formSelector, inputSelector, submitButtonSelector, in
             refreshForm(form, inputSelector, btn, inactiveButtonClass, inputErrorClass, errorClass);
         }
     })
-
-
 }
 
 function showInputError(formElement, inputElement, inputErrorClass, errClass) {
