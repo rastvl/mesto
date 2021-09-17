@@ -1,8 +1,4 @@
 function enableValidation({formSelector, inputSelector, submitButtonSelector, inactiveButtonClass, inputErrorClass, errorClass}) {
-
-    //formSelector to global scope to use in 'closePopup' and 'openPopup' methods
-    //window.formSelector = formSelector;
-
     const formsList = Array.from(document.querySelectorAll(formSelector));
 
     formsList.forEach(form => {
