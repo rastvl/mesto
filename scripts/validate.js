@@ -5,8 +5,6 @@ function enableValidation({formSelector, inputSelector, submitButtonSelector, in
         const btn = form.querySelector(submitButtonSelector);
         form.addEventListener('submit', evt => {
             evt.preventDefault();
-            btn.classList.add(inactiveButtonClass);
-            btn.disabled = true;
         })
         setEventListeners(form, inputSelector, btn, inactiveButtonClass, inputErrorClass, errorClass);
         form.refresh = function() {
