@@ -59,10 +59,3 @@ export default class Card {
         return this._cardElement;
     }
 }
-
-window.card = new Card({
-    name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-}, '#cardTemplate');
-
-console.log(window.card);
