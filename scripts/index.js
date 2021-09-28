@@ -61,7 +61,7 @@ function setMouseHandler(popup) {
     popup.addEventListener('mousedown', mouseHandler)
 }
 
-function openPopup(popup) {
+export function openPopup(popup) {
     setEscHandler();
     popup.classList.add('popup_opened');
 }

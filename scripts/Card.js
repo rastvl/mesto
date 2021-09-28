@@ -1,4 +1,5 @@
-import { cardSelectors, popupIncreaseSelectors } from './domElements.js';
+import { cardSelectors, popupPic, popupImgCaption, popupImgIncrease} from './domElements.js';
+import { openPopup } from './index.js';
 
 const { cardBlock, cardTrashIconSelector, cardImgSelector, cardTitleSelector, cardLikeBtn, cardLikeBtnActive } = cardSelectors;
 
@@ -19,8 +20,10 @@ export default class Card {
     }
 
     _handlePopupImg() {
-        const popup = new PopupIncrease(popupIncreaseSelectors.popupIncreaseSelector, this._cardInfo);
-        popup._openPopup();
+        popupImgCaption.textContent = this._cardInfo.name;
+        popupImgIncrease.src = this._cardInfo.link;
+        popupImgIncrease.alt = `Фото ${this._cardInfo.name}`;
+        openPopup(popupPic);
     }
 
     _handleTrashIcon() {
