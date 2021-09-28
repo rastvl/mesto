@@ -9,6 +9,7 @@
     -webkit-transition: opacity .3s ease-in-out;
     -o-transition: opacity .3s ease-in-out;
     transition: opacity .3s ease-in-out;
+    z-index: 1;
 }
 
 .card__trash-icon:hover {

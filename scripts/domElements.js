@@ -51,9 +51,9 @@ export const popupAddCard = document.querySelector('.popup_add-card')
 export const popupPic = document.querySelector('.popup_place-pic');
 export const editBtn = document.querySelector('.profile__edit-button');
 export const addBtn = document.querySelector('.profile__add-button');
-// export const closeEditBtn = document.querySelector('.popup__close_edit');
-// export const closeAddCardBtn = document.querySelector('.popup__close_add-card');
-// export const closePlacePicBtn = document.querySelector('.popup__close_place-pic');
+export const closeEditBtn = document.querySelector('.popup__close_edit');
+export const closeAddCardBtn = document.querySelector('.popup__close_add-card');
+export const closePlacePicBtn = document.querySelector('.popup__close_place-pic');
 
 export const popupImgIncrease = document.querySelector('.place-pic__show');
 export const popupImgCaption = document.querySelector('.place-pic__caption');

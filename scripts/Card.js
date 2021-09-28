@@ -1,5 +1,4 @@
-import { cardSelectors, popupImgCaption, popupImgIncrease, popupIncreaseSelectors } from './domElements.js';
-import PopupIncrease from './PopupIncrease.js';
+import { cardSelectors, popupIncreaseSelectors } from './domElements.js';
 
 const { cardBlock, cardTrashIconSelector, cardImgSelector, cardTitleSelector, cardLikeBtn, cardLikeBtnActive } = cardSelectors;
 
@@ -24,9 +23,8 @@ export default class Card {
         popup._openPopup();
     }
 
-    _handleTrashIcon(trashIcon) {
-        const card = trashIcon.closest(cardBlock);
-        card.remove();
+    _handleTrashIcon() {
+        this._cardElement.remove();
     }
 
     _handleLikeBtn(likeBtn) {
@@ -35,7 +33,7 @@ export default class Card {
 
     _setEventListeners() {
         this._cardElement.querySelector(cardTrashIconSelector).addEventListener('click', evt => {
-            this._handleTrashIcon(evt.target);
+            this._handleTrashIcon();
         });
 
         this._cardImg.addEventListener('click', _ => {
