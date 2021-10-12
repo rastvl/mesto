@@ -1,13 +1,14 @@
 import { cardSelectors, popupPic, popupImgCaption, popupImgIncrease} from './domElements.js';
-import { openPopup } from './index.js';
+//import { openPopup } from './index.js';
 
 const { cardBlock, cardTrashIconSelector, cardImgSelector, cardTitleSelector, cardLikeBtn, cardLikeBtnActive } = cardSelectors;
 
 export default class Card {
 
-    constructor(cardInfo, templateSelector) {
+    constructor(cardInfo, templateSelector, handleCardClick) {
         this._cardInfo = cardInfo;
         this._templateSelector = templateSelector;
+        this._handleCardClick = handleCardClick;
     }
 
     _getTemplate() {
@@ -17,13 +18,6 @@ export default class Card {
             .querySelector(cardBlock)
             .cloneNode(true);
         return cardElement;
-    }
-
-    _handlePopupImg() {
-        popupImgCaption.textContent = this._cardInfo.name;
-        popupImgIncrease.src = this._cardInfo.link;
-        popupImgIncrease.alt = `Фото ${this._cardInfo.name}`;
-        openPopup(popupPic);
     }
 
     _handleTrashIcon() {
@@ -40,7 +34,7 @@ export default class Card {
         });
 
         this._cardImg.addEventListener('click', _ => {
-            this._handlePopupImg();
+            this._handleCardClick();
         })
 
         this._cardElement.querySelector(cardLikeBtn).addEventListener('click', evt => {
