@@ -61,6 +61,8 @@ export const popupImgCaption = document.querySelector('.place-pic__caption');
 export const profileName = document.querySelector('.profile__name');
 export const profileDesc = document.querySelector('.profile__description');
 
+
+
 export const initialCards = [{
     name: 'Архыз',
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
