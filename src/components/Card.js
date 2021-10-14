@@ -1,5 +1,4 @@
-import { cardSelectors, popupPic, popupImgCaption, popupImgIncrease} from './domElements.js';
-//import { openPopup } from './index.js';
+import { cardSelectors } from '../utils/domElements.js';
 
 const { cardBlock, cardTrashIconSelector, cardImgSelector, cardTitleSelector, cardLikeBtn, cardLikeBtnActive } = cardSelectors;
 

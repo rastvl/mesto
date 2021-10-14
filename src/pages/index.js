@@ -10,24 +10,28 @@ import {
     placeImgLinkInput,
     nameInput,
     jobInput
-} from './domElements.js';
-import Card from './Card.js';
-import FormValidator from './FormValidator.js';
-import Section from './Section.js';
-import PopupWithImage from './PopupWithImage.js';
-import PopupWithForm from './PopupWithForm.js';
-import UserInfo from './UserInfo.js';
+} from '../utils/domElements.js';
+import Card from '../components/Card.js';
+import FormValidator from '../components/FormValidator.js';
+import Section from '../components/Section.js';
+import PopupWithImage from '../components/PopupWithImage.js';
+import PopupWithForm from '../components/PopupWithForm.js';
+import UserInfo from '../components/UserInfo.js';
 
+const popupIncrease = new PopupWithImage('.popup_place-pic');
+
+function makeCard(cardInfo) {
+    const card = new Card(cardInfo, '#cardTemplate', _ => {
+        popupIncrease.open(cardInfo);
+    });
+    return card.createCard();
+}
 
 const gallery = new Section({
     items: initialCards,
     renderer: (cardInfo) => {
-        const card = new Card(cardInfo, '#cardTemplate', _ => {
-            const popupIncrease = new PopupWithImage('.popup_place-pic', cardInfo);
-            popupIncrease.open();
-        });
-        const cardElement = card.createCard();
-        gallery.addItem(cardElement, true);
+        const card = makeCard(cardInfo);
+        gallery.addItem(card, true);
     }
 }, gallerySection)
 gallery.renderItems();
@@ -44,10 +48,10 @@ const userInfo = new UserInfo({
     profileCaptionSelector: '.profile__description'
 })
 
-const popupEditProfile = new PopupWithForm('.popup-edit', _ => {
+const popupEditProfile = new PopupWithForm('.popup-edit', inputValues => {
     userInfo.setUserInfo({
-        name: nameInput.value,
-        about: jobInput.value
+        name: inputValues.login,
+        about: inputValues.job
     })
     popupEditProfile.close();
 }, validatorEditProfile);
@@ -60,15 +64,12 @@ editBtn.addEventListener('click', _ => {
 });
 
 
-const popupAddCard = new PopupWithForm('.popup_add-card', _ => {
+const popupAddCard = new PopupWithForm('.popup_add-card', inputValues => {
     const cardInfo = {
-        name: placeInput.value,
-        link: placeImgLinkInput.value
+        name: inputValues.title,
+        link: inputValues.link
     }
-    const card = new Card(cardInfo, '#cardTemplate', _ => {
-        const popupIncrease = new PopupWithImage('.popup_place-pic', cardInfo);
-        popupIncrease.open();
-    }).createCard();
+    const card = makeCard(cardInfo);
     gallery.addItem(card, false);
     popupAddCard.close();
 }, validatorAddCard);

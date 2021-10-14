@@ -1,4 +1,4 @@
-import { formConfig } from "./domElements.js";
+import { formConfig } from "../utils/domElements.js";
 import Popup from "./Popup.js";
 
 const {formSelector, inputSelector} = formConfig;
@@ -25,7 +25,7 @@ export default class PopupWithForm extends Popup {
         super.setEventListeners();
         this._form.addEventListener('submit', evt => {
             evt.preventDefault();
-            this._onSubmit(evt);
+            this._onSubmit(this._getInputValues());
         })
     }
 

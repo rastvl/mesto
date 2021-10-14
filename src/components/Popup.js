@@ -1,15 +1,12 @@
 import {
     popupSelectors
-} from './domElements.js'
+} from "../utils/domElements.js"
 
 const {
     popupOpenedSelector,
     popupCloseBtn
 } = popupSelectors;
 
-const isOverlay = target => {
-    return target.classList.contains(popupOpenedSelector);
-}
 
 export default class Popup {
     constructor(popupSelector) {
@@ -17,8 +14,12 @@ export default class Popup {
         this._closeBtn = this._popupElement.querySelector(popupCloseBtn);
     }
 
+    _isOverlay = target => {
+        return target.classList.contains(popupOpenedSelector);
+    }
+
     _mouseHandler = evt => {
-        if (isOverlay(evt.target))
+        if (this._isOverlay(evt.target))
             this.close();
     }
 
@@ -61,10 +62,6 @@ export default class Popup {
     setEventListeners() {
         this._closeBtn.addEventListener('click', this._handleCloseBtn);
         this._setMouseHandler();
-    }
-
-    _renderPopup() {
-        this.setEventListeners();
     }
 
 }
