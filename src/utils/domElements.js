@@ -5,7 +5,8 @@ export const cardSelectors = {
     cardImgSelector: '.card__image',
     cardTitleSelector: '.card__title',
     cardLikeBtn: '.card__like-button',
-    cardLikeBtnActive: 'card__like-button_active'
+    cardLikeBtnActive: 'card__like-button_active',
+    cardLikesSelector: '.card__like-counter'
 }
 
 export const popupSelectors = {
@@ -63,7 +64,7 @@ export const popupImgCaption = document.querySelector(popupImgCaptionSelector);
 
 export const profileName = document.querySelector('.profile__name');
 export const profileDesc = document.querySelector('.profile__description');
-
+export const profileAva = document.querySelector('.profile__avatar');
 
 
 export const initialCards = [{

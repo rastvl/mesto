@@ -18,8 +18,8 @@
             <section class="profile">
                 <img src="<%=require('./images/profile-avatar.jpg')%>" class="profile__avatar" alt="Аватар профиля">
                 <div class="profile__info">
-                    <h1 class="profile__name">Жак-Ив Кусто</h1>
-                    <p class="profile__description">Исследователь океана</p>
+                    <h1 class="profile__name"></h1>
+                    <p class="profile__description"></p>
                     <button type="button" class="profile__edit-button"></button>
                 </div>
                 <button type="button" class="profile__add-button"></button>
@@ -83,11 +83,14 @@
             <div class="card__image"></div>
             <div class="card__description">
                 <p class="card__title"></p>
-                <button type="button" class="card__like-button"></button>
+                <div class="card__like-container">
+                    <button type="button" class="card__like-button"></button>
+                    <div class="card__like-counter">0</div>
+                </div>
             </div>
         </div>
     </template>
-    <!-- <script src="scripts/index.js" type="module"></script> -->
+    <!-- <script src="pages/index.js" type="module"></script> -->
 </body>
 
 </html>
