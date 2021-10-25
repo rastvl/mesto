@@ -2,6 +2,7 @@ export const cardSelectors = {
     cardTemplate: '#cardTemplate',
     cardBlock: '.card',
     cardTrashIconSelector: '.card__trash-icon',
+    cardTrashIconShow: 'card__trash-icon_show',
     cardImgSelector: '.card__image',
     cardTitleSelector: '.card__title',
     cardLikeBtn: '.card__like-button',
@@ -41,6 +42,7 @@ export const gallerySection = document.querySelector(".elements");
 
 export const formEdit = document.querySelector('.popup__form_edit');
 export const formAddCard = document.querySelector('.popup__form_add-card');
+export const formSetAvatar = document.querySelector('.popup_set-avatar');
 export const nameInput = formEdit.querySelector('#nameInput');
 export const jobInput = formEdit.querySelector('#jobInput');
 
@@ -50,6 +52,7 @@ export const placeImgLinkInput = formAddCard.querySelector('#placeImgLink');
 export const popupEdit = document.querySelector('.popup-edit');
 export const popupAddCard = document.querySelector('.popup_add-card')
 export const popupPic = document.querySelector('.popup_place-pic');
+export const avatarContainer = document.querySelector('.profile__avatar-container');
 export const editBtn = document.querySelector('.profile__edit-button');
 export const addBtn = document.querySelector('.profile__add-button');
 export const closeEditBtn = document.querySelector('.popup__close_edit');

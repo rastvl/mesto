@@ -52,4 +52,28 @@ export default class Api {
             headers: this._headers
         }).then(Api._checkResponse)
     }
+
+    unlikeCard(cardId) {
+        return fetch(`${this._baseUrl}/cards/likes/${cardId}`, {
+            method: 'DELETE',
+            headers: this._headers
+        }).then(Api._checkResponse)
+    }
+
+    deleteCard(cardId) {
+        return fetch(`${this._baseUrl}/cards/${cardId}`, {
+            method: 'DELETE',
+            headers: this._headers
+        }).then(Api._checkResponse)
+    }
+
+    setAvatar(link) {
+        return fetch(`${this._baseUrl}/users/me/avatar`, {
+            method: 'PATCH',
+            headers: this._headers,
+            body: JSON.stringify({
+                avatar: link
+            })
+        }).then(Api._checkResponse);
+    }
 }

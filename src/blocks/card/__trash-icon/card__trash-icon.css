@@ -10,6 +10,7 @@
     -o-transition: opacity .3s ease-in-out;
     transition: opacity .3s ease-in-out;
     z-index: 1;
+    display: none;
 }
 
 .card__trash-icon:hover {

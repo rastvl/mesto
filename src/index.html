@@ -16,7 +16,9 @@
         </header>
         <main>
             <section class="profile">
-                <img src="<%=require('./images/profile-avatar.jpg')%>" class="profile__avatar" alt="Аватар профиля">
+                <div class="profile__avatar-container">
+                    <img src="<%=require('./images/profile-avatar.jpg')%>" class="profile__avatar" alt="Аватар профиля">
+                </div>
                 <div class="profile__info">
                     <h1 class="profile__name"></h1>
                     <p class="profile__description"></p>
@@ -34,11 +36,11 @@
                     <form class="popup__form popup__form_edit" name="edit-profile" novalidate>
                         <label class="popup__form-field">
                             <input type="text" value="" class="popup__input" name="login" placeholder="Имя" id="nameInput" minlength="2" maxlength="40" required>
-                            <span class="popup__input-error nameInput-error">sdfsdfsd</span>
+                            <span class="popup__input-error nameInput-error"></span>
                         </label>
                         <label class="popup__form-field">
                             <input type="text" value="" class="popup__input" name="job" placeholder="Деятельность" id="jobInput" minlength="2" maxlength="200" required>
-                            <span class="popup__input-error jobInput-error">sdfsdfsd</span>
+                            <span class="popup__input-error jobInput-error"></span>
                         </label>
                         <button type="submit" class="popup__submit">Сохранить</button>
                     </form>
@@ -51,13 +53,35 @@
                     <form class="popup__form popup__form_add-card" name="add-card">
                         <label class="popup__form-field">
                             <input type="text" value="" class="popup__input" name="title" placeholder="Название" id="placeInput" minlength="2" maxlength="40" required>
-                            <span class="popup__input-error placeInput-error">sdfsdfsd</span>
+                            <span class="popup__input-error placeInput-error"></span>
                         </label>
                         <label class="popup__form-field">
                             <input type="url" value="" class="popup__input" name="link" placeholder="Ссылка на картинку" id="placeImgLink">
-                            <span class="popup__input-error placeImgLink-error">sdfsdfsd</span>
+                            <span class="popup__input-error placeImgLink-error"></span>
                         </label>
                         <button type="submit" class="popup__submit popup__submit_type_error">Создать</button>
+                    </form>
+                </div>
+            </div>
+            <div class="popup popup_form-submit">
+                <div class="popup__content">
+                    <button type="button" class="popup__close"></button>
+                    <h2 class="popup__description popup__description_form-submit">Вы уверены?</h2>
+                    <form class="popup__form popup__form_submit" name="form-submit">
+                        <button type="submit" class="popup__submit">Да</button>
+                    </form>
+                </div>
+            </div>
+            <div class="popup popup_set-avatar">
+                <div class="popup__content">
+                    <button type="button" class="popup__close"></button>
+                    <h2 class="popup__description popup__description_set-avatar">Обновить аватар</h2>
+                    <form class="popup__form popup__form_set-avatar" name="setAvatar">
+                        <label class="popup__form-field">
+                            <input type="url" value="" class="popup__input" name="avatarLink" placeholder="Ссылка" id="avaLinkInput" required>
+                            <span class="popup__input-error avaLinkInput-error">sdfsdfsd</span>
+                        </label>
+                        <button type="submit" class="popup__submit">Сохранить</button>
                     </form>
                 </div>
             </div>

@@ -12,7 +12,7 @@ export default class PopupWithForm extends Popup {
         this._inputList = this._form.querySelectorAll(inputSelector);
         this._onSubmit = submitCallback;
         this._inputValues = {};
-        this._validator = formValidator;
+        this._validator = formValidator || null;
         this.setEventListeners();
     }
 
@@ -23,16 +23,19 @@ export default class PopupWithForm extends Popup {
         return this._inputValues;
     }
 
+    _callOnSubmit = evt => {
+        evt.preventDefault();
+        this._onSubmit(this._getInputValues());
+    }
+
     setEventListeners() {
         super.setEventListeners();
-        this._form.addEventListener('submit', evt => {
-            evt.preventDefault();
-            this._onSubmit(this._getInputValues());
-        })
+        this._form.addEventListener('submit', this._callOnSubmit)
     }
 
     open() {
-        this._validator.refresh();
+        if (this._validator)
+            this._validator.refresh();
         super.open();
     }
 
@@ -43,5 +46,10 @@ export default class PopupWithForm extends Popup {
 
     waitLoading(isLoading) {
         isLoading ? this._submitBtn.textContent = 'Сохранение...' : this._submitBtn.textContent = this._submitBtnText;
+    }
+
+    setSubmitHandler(submitCallback) {
+        this._form.removeEventListener('submit', this._callOnSubmit);
+        this._form.addEventListener('submit', submitCallback);
     }
 }
