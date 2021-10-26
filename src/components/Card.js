@@ -39,13 +39,10 @@ export default class Card {
     _renderLikesContainer() {
         this._cardLikesElement.textContent = this._likesList.length;
         this._cardLikeBtn.classList.remove(cardLikeBtnActive);
-        this._likesList.forEach(likeObj => {
-            //console.log(likeObj)
-            if (likeObj._id == this._userID) {
-                this._cardLikeBtn.classList.add(cardLikeBtnActive)
-            }
-
-        })
+        const isLiked = this._likesList.some(like => like._id === this._userID);
+        if (isLiked) {
+            this._cardLikeBtn.classList.add(cardLikeBtnActive);
+        }
     }
 
     updateLikes(likesArr) {

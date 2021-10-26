@@ -1,7 +1,13 @@
-import { formConfig } from "../utils/domElements.js";
+import {
+    formConfig
+} from "../utils/domElements.js";
 import Popup from "./Popup.js";
 
-const {formSelector, inputSelector, submitButtonSelector} = formConfig;
+const {
+    formSelector,
+    inputSelector,
+    submitButtonSelector
+} = formConfig;
 
 export default class PopupWithForm extends Popup {
     constructor(popupSelector, submitCallback, formValidator) {
@@ -50,6 +56,7 @@ export default class PopupWithForm extends Popup {
 
     setSubmitHandler(submitCallback) {
         this._form.removeEventListener('submit', this._callOnSubmit);
-        this._form.addEventListener('submit', submitCallback);
+        this._callOnSubmit = submitCallback;
+        this._form.addEventListener('submit', this._callOnSubmit);
     }
 }

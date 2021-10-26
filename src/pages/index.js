@@ -45,19 +45,13 @@ function handleCardDelete(cardElement, cardId) {
     popupFormSubmit.setSubmitHandler(evt => {
         evt.preventDefault();
         api.deleteCard(cardId)
-        .then(res => {
-            cardElement.remove();
-            popupFormSubmit.close();
-        })
-        .catch(err => console.log(err));
+            .then(res => {
+                cardElement.remove();
+                popupFormSubmit.close();
+            })
+            .catch(err => console.log(err));
     })
     popupFormSubmit.open();
-
-    // api.deleteCard(cardId)
-    //     .then(res => {
-    //         popupFormSubmit.close();
-    //     })
-    //     .catch(err => console.log(err));
 }
 
 function makeCard(cardInfo) {
@@ -80,16 +74,6 @@ const options = {
     }
 }
 const api = new Api(options);
-
-
-// const gallery = new Section({
-//     items: initialCards,
-//     renderer: (cardInfo) => {
-//         const card = makeCard(cardInfo);
-//         gallery.addItem(card, true);
-//     }
-// }, gallerySection)
-// gallery.renderItems();
 
 
 const validatorEditProfile = new FormValidator(formConfig, formEdit);
@@ -116,11 +100,6 @@ const popupEditProfile = new PopupWithForm('.popup-edit', inputValues => {
             popupEditProfile.close();
         })
         .catch(err => console.log(err))
-    // userInfo.setUserInfo({
-    //     name: inputValues.login,
-    //     about: inputValues.job
-    // })
-    // popupEditProfile.close();
 }, validatorEditProfile);
 
 editBtn.addEventListener('click', _ => {
@@ -140,13 +119,6 @@ const popupAddCard = new PopupWithForm('.popup_add-card', inputValues => {
             popupAddCard.close();
         })
         .catch(err => console.log(err))
-    // const cardInfo = {
-    //     name: inputValues.title,
-    //     link: inputValues.link
-    // }
-    // const card = makeCard(cardInfo);
-    // gallery.addItem(card, false);
-    // popupAddCard.close();
 }, validatorAddCard);
 
 addBtn.addEventListener('click', _ => {
@@ -181,5 +153,3 @@ Promise.all([api.getUserData(), api.getInitialCards()])
         gallery.renderItems();
     })
     .catch(err => console.log(err));
-
-//console.log(userData)
